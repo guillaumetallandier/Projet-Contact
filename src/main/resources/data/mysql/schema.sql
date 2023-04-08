@@ -1,0 +1,20 @@
+
+CREATE TABLE contact (
+  id INT NOT NULL AUTO_INCREMENT,
+  firstName VARCHAR(50) NOT NULL,
+  lastName VARCHAR(50) NOT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE mailAdress (
+  id INT NOT NULL AUTO_INCREMENT,
+  contactId INT NOT NULL,
+  email VARCHAR(255) UNIQUE NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (contact_id) REFERENCES contact(id)
+);
+
+
+ALTER TABLE contact
+ADD postalAdress VARCHAR(255),
+ADD mailAdress VARCHAR(255);,

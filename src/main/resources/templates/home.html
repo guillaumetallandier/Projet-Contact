@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+    <title>Form Data</title>
+
+</head>
+<style>body {
+  background-color: #f5f5f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 50px auto;
+  max-width: 600px;
+  width: 100%;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 10px 20px;
+  text-align: left;
+}
+
+td {
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+}
+
+p {
+  font-size: 16px;
+  margin: 0;
+  padding: 10px;
+}
+
+a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+div {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 20px;
+}
+
+div p {
+  margin: 0;
+  padding: 0;
+}
+
+div p:first-child {
+  margin-right: 20px;
+}
+
+</style>
+<body>
+<table>
+    <tr>
+        <th>ID</th>
+       <td> <p th:text="${id}" /></td>
+    </tr>
+    <tr>
+        <th>Prénom</th>
+        <td> <p th:text="${firstName}" /></td>
+    </tr>
+    <tr>
+        <th>Nom de famille</th>
+        <td> <p th:text="${lastName}" /></td>
+    </tr>
+    <tr>
+        <th>Adresse mail</th>
+        <td> <p th:text="${mailAdress}" /></td>
+    </tr>
+
+
+</table>
+<div>
+    <p>New contact <a href="/newContact">here</a></p>
+    <p>List of contact <a href="/all">here</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Tableau de données</title>
+
+</head>
+<body>
+<style>body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f5f5f5;
+}
+
+h1 {
+	text-align: center;
+	margin-top: 50px;
+}
+
+table {
+	border-collapse: collapse;
+	margin: 50px auto;
+	background-color: #fff;
+	box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+}
+
+thead tr {
+	background-color: #1abc9c;
+	color: #fff;
+}
+
+th, td {
+	padding: 10px;
+	text-align: left;
+}
+
+tbody tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+	background-color: #e0e0e0;
+}
+
+td:nth-child(1) {
+	width: 50px;
+}
+
+td:nth-child(2) {
+	width: 150px;
+}
+
+td:nth-child(3) {
+	width: 150px;
+}
+
+td:nth-child(4) {
+	width: 300px;
+}
+
+td:nth-child(5) {
+	width: 200px;
+}
+.edit-button {
+  background-color: #4CAF50; /* Couleur de fond */
+  border: none; /* Pas de bordure */
+  color: white; /* Couleur de texte */
+  padding: 10px 20px; /* Espacement du texte */
+  text-align: center; /* Alignement du texte */
+  text-decoration: none; /* Pas de soulignement */
+  display: inline-block; /* Afficher en ligne */
+  font-size: 16px; /* Taille de police */
+  border-radius: 5px; /* Rayon de bordure */
+}
+
+/* Lorsque le curseur survole le bouton */
+.edit-button:hover {
+  background-color: #3e8e41; /* Nouvelle couleur de fond */
+}
+
+/* Lorsque le bouton est activé ou sélectionné */
+.edit-button:active {
+  background-color: #145e15; /* Nouvelle couleur de fond */
+}
+</style>
+<h1>Liste de Contacts</h1>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Prénom</th>
+    <th>Nom</th>
+    <th>Adresse e-mail</th>
+    <th>Modifier</th>
+    <th>Zoomer</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="contact: ${contacts}">
+    <td> <p th:text="${contact.id}" /></td>
+    <td> <p th:text="${contact.firstName}" /></td>
+    <td> <p th:text="${contact.lastName}" /></td>
+    <td> <p th:text="${contact.mailAdress}" /></td>
+    <td> <a th:href="@{/contact/{id}(id=${contact.id})}" class="edit-button">Modifier</a></td>
+    <td> <a th:href="@{/home/{id}(id=${contact.id})}" class="edit-button">Zoomer</a></td>
+
+  </tr>
+
+  </tbody>
+</table>
+</body>
+</html>

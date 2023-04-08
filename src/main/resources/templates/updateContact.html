@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+        <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+</head>
+<body>
+<style>
+   form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+  font-family: Arial, sans-serif;
+}
+
+label {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  margin-bottom: 20px;
+  width: 300px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8
+}
+</style>
+
+<form action="/update" method="post">
+    <label for="id">Id:</label>
+    <input visible="false" type="text" id="id" name="id" readonly="readonly"  th:value="${id}"><br>
+
+    <label for="firstName">Prénom:</label>
+    <input type="text" id="firstName" name="firstName"  th:value="${firstName}"><br>
+
+    <label for="lastName">Nom de famille:</label>
+    <input type="text" id="lastName" name="lastName" th:value="${lastName}" ><br>
+
+    <label for="lastName">Mail:</label>
+    <input type="text" id="mailAdress" name="mailAdress" th:value="${mailAdress}"><br>
+
+    <input type="submit" value="Soumettre">
+</form>
+
+</body>
+</html>
